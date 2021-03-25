@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    volumes:
+      - ${HOME}/.aws:/root/.aws
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+
+  kinesis:
+    image: instructure/kinesalite:latest
+    ports:
+      - "4567:4567"
+
+  dynamo:
+    image: amazon/dynamodb-local:latest
+    ports:
+      - "8000:8000"
+
