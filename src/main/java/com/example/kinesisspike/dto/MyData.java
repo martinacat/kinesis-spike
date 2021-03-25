@@ -1,4 +1,4 @@
-package com.example.kinesisspike.listener;
+package com.example.kinesisspike.dto;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

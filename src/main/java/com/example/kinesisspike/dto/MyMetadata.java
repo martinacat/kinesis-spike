@@ -1,4 +1,4 @@
-package com.example.kinesisspike.service;
+package com.example.kinesisspike.dto;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

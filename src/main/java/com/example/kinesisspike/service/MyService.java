@@ -1,5 +1,7 @@
 package com.example.kinesisspike.service;
 
+import com.example.kinesisspike.dto.MyMessage;
+import com.example.kinesisspike.dto.MyMetadata;
 import de.bringmeister.spring.aws.kinesis.AwsKinesisOutboundGateway;
 import de.bringmeister.spring.aws.kinesis.Record;
 import org.springframework.stereotype.Service;
@@ -14,7 +16,7 @@ public class MyService {
     }
 
     public void sendMyMessage() {
-        Record record = new Record(new MyMessage("my content"), new MyMetadata("my metadata"));
+        Record<MyMessage, MyMetadata> record = new Record<>(new MyMessage("my content"), new MyMetadata("my metadata"));
         gateway.send("my-stream", record);
     }
 }
